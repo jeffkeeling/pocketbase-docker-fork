@@ -13,7 +13,7 @@ COPY --from=download /pocketbase /usr/local/bin/pocketbase
 RUN mkdir -p /root/pocketbase
 
 # Copy pb_hooks directory into the PocketBase data directory
-COPY ./pb_hooks /usr/local/bin/pb_hooks
+COPY ./pb_hooks /root/pocketbase/pb_hooks
 
 EXPOSE 8090
 ENTRYPOINT /usr/local/bin/pocketbase serve --http=0.0.0.0:8090 --dir=/root/pocketbase
