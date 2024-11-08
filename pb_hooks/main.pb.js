@@ -9,13 +9,13 @@ onRecordAfterCreateRequest((e) => {
     to: [{ address: process.env.EMAIL_RECIPIENT }],
     subject: `New Message from ${process.env.SITE_NAME}`,
     html: `
-      New Message from ${process.env.SITE_NAME}
+      New Message from ${process.env.SITE_NAME} <br>
 
-      Name: ${e.record.get('name')}
+      Name: ${e.record.get('name')}<br>
       
-      Email: ${e.record.get('email')}
+      Email: ${e.record.get('email')}<br>
 
-      Message: ${e.record.get('message')}
+      Message: ${e.record.get('message')}<br>
   	`,
     // bcc, cc and custom headers are also supported...
   })
